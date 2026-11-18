@@ -1,0 +1,193 @@
+body {
+  /* Corregido a rgba y oscurecido un poco para dar contraste */
+  background-color: rgba(36, 20, 10, 0.9); 
+}
+
+
+
+.titulo {
+  /* 1. Medidas iguales para que sea un cuadrado perfecto */
+  width: 240px;
+  height: 240px;
+  
+  /* 2. Espacio superior suave para el texto y fondo negro sólido */
+  padding: 20px 0 0 0;
+  box-sizing: border-box; /* Evita que el padding agrande la caja */
+  background-color: #000000;
+  
+  /* 3. Ajuste de la imagen de fondo para que no se corte ni se estire */
+  background-image: url(img/WhatsApp\ Image\ 2026-11-18\ at\ 1.19.48\ PM.jpeg);
+  background-size: 160px; /* Controla el tamaño exacto del dibujo del pin */
+  background-repeat: no-repeat;
+  background-position: center 65px; /* Ubica el pin justo debajo del texto TUPARRI */
+  
+  /* 4. Centrado, bordes redondeados y marco naranja */
+  margin: 25px auto;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 35px;
+  border: 3px solid #e64a19;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+
+
+    
+
+
+/* --- CORRECCIÓN PARA EL TEXTO DE BIENVENIDA --- */
+.TEXT {
+  text-align: center;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #ffffff;             /* Texto en blanco para que resalte en el marrón */
+  font-size: 15px;
+  font-weight: normal;
+  max-width: 700px;           /* Evita que el texto toque los bordes de la pantalla */
+  margin: 25px auto;          /* Lo centra y le da espacio arriba y abajo */
+  line-height: 1.5;
+  background-color: transparent !important; /* ELIMINA LA BARRA BLANCA */
+  border: none !important;    /* Quita cualquier borde raro */
+}
+
+/* --- CORRECCIÓN PARA EL TÍTULO "CATALOGO" --- */
+.opciones {
+  text-align: center;
+  font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+  color: #ffffff; /* Texto en blanco */
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  background-color: transparent !important;
+  border: none !important;
+  
+  /* Esto lo centra de forma obligatoria y le da la línea naranja abajo */
+  display: block;
+  width: fit-content;
+  margin: 40px auto 20px auto; 
+  border-bottom: 3px solid #e64a19; 
+  padding-bottom: 6px;
+}
+
+
+
+/* --- CONTENEDOR PRINCIPAL --- */
+.catalogo-vertical {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;    
+  gap: 24px;              /* Espacio amplio entre tarjetas para que respire el diseño */
+  padding: 30px 20px;
+  width: 100%;
+  max-width: 750px;       /* Controla el ancho máximo para que no se estire demasiado */
+  margin: 0 auto;         
+}
+
+/* --- LA TARJETA (COMBINA CON EL LOGO) --- */
+.producto-card {
+  display: flex;          /* Hace que la foto vaya a la izquierda y el texto a la derecha */
+  width: 100%;
+  height: 140px;          /* Altura fija para que todas las tarjetas sean simétricas */
+  background-color: #ffffff;
+  border-radius: 12px;    /* Bordes redondeados más modernos */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); /* Sombra más oscura que levanta la tarjeta */
+  border: 1px solid #1a1a1a; /* Borde oscuro para definir el contorno */
+
+  text-decoration: none; 
+  color: inherit;        
+  cursor: pointer;       
+  transition: all 0.3s ease; /* Transición suave para los efectos */
+}
+
+/* --- ESPACIO PARA LA IMAGEN (CORREGIDO) --- */
+.producto-img {
+  width: 180px;           /* Le damos un ancho real a la imagen */
+  height: 100%;
+  background-position: center;
+  background-size: cover; 
+  background-repeat: no-repeat;
+  background-color: #f5f5f5; /* Fondo gris claro por si la imagen tarda en cargar */
+}
+
+/* --- INFORMACIÓN Y TEXTOS --- */
+.producto-info {
+  padding: 20px;          /* Espacio interno para que el texto no toque los bordes */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;           /* Hace que ocupe todo el espacio sobrante */
+}
+
+.producto-info h3 {
+  margin: 0 0 6px 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #1a1a1a;         /* Negro suave para los títulos */
+  font-size: 18px;
+}
+
+.producto-info p {
+  margin: 0 0 12px 0;
+  color: #666666;         /* Gris oscuro muy legible para la descripción */
+  font-size: 14px;
+  line-height: 1.4;       /* Espaciado entre líneas para mejor lectura */
+}
+
+.producto-info .precio {
+  font-weight: bold;
+  color: #ffffff; /* Letras blancas */
+  background-color: #e64a19; /* Fondo naranja de tu logo */
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  align-self: flex-start; /* Evita que el botón se estire a lo ancho */
+  margin-top: auto; /* Lo empuja abajo a la esquina */
+}
+
+
+
+/* --- EFECTO VISUAL AL PASAR EL MOUSE (HOVER) --- */
+.producto-card:hover {
+  transform: translateY(-4px); /* La tarjeta sube elegantemente */
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.12); /* La sombra se intensifica */
+  border-color: #e64a19;       /* El borde se pinta del color del logo */
+}
+
+/* --- DISEÑO EXCLUSIVO PARA CELULARES --- */
+@media (max-width: 600px) {
+  /* Forzamos a que el catálogo use todo el ancho disponible sin salirse */
+  .catalogo-vertical {
+    width: 100%;
+    padding: 20px 15px; /* Reducimos espacios laterales */
+    box-sizing: border-box;
+  }
+
+  /* Centramos de forma obligatoria las tarjetas */
+  .producto-card {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  /* Hacemos que el texto de descripción sea un poco más chico para que entre bien */
+  .producto-info p {
+    font-size: 13px;
+  }
+}
+
+  /* Fin del bloque de celulares */
+  .producto-info p {
+    font-size: 13px;
+  }
+ /* <-- ESTA LLAVE CIERRA EL @MEDIA DE CELULARES */
+
+/* --- PIE DE PÁGINA (FOOTER) --- */
+.footer-tuparri {
+  background-color: #120a05;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  border-top: 3px solid #e64a19;
+  margin-top: 60px;
+  padding-top: 40px;
+}
+
+/* ... aquí sigue el resto del código del footer ... */

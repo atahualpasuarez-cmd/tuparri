@@ -1,0 +1,181 @@
+/* --- FONDO GENERAL --- */
+.body-menu {
+  background-color: rgba(36, 20, 10, 0.9); /* El mismo marrón oscuro del inicio */
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #ffffff;
+}
+
+/* --- ENCABEZADO Y DIRECCIÓN --- */
+.header-menu {
+  text-align: center;
+  padding: 40px 20px 20px 20px;
+}
+
+.titulo-principal {
+  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.info-direccion {
+  color: #e0e0e0;
+  font-size: 16px;
+  line-height: 1.5;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- TÍTULO SECCIÓN "MENU" --- */
+.subtitulo-seccion {
+  text-align: center;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #ffffff;
+  display: table;
+  margin: 30px auto 20px auto;
+  border-bottom: 3px solid #e64a19; /* Línea naranja parrillera */
+  padding-bottom: 6px;
+}
+
+/* --- CONTENEDOR DE PLATILLOS --- */
+.contenedor-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Separa los platos limpiamente sin amontonarlos */
+  padding: 10px 20px 40px 20px;
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* --- TARJETA DE PLATILLO --- */
+.platillo {
+  display: flex;
+  width: 100%;
+  height: 130px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); /* Sombra prolija */
+  border: 1px solid #1a1a1a;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.platillo:hover {
+  transform: translateY(-4px); /* Efecto interactivo al pasar el mouse */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+  border-color: #e64a19;
+}
+
+/* --- INFORMACIÓN DEL PLATO (IZQUIERDA) --- */
+.platillo-info {
+  padding: 15px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.platillo-info h3 {
+  margin: 0 0 4px 0;
+  color: #1a1a1a; /* Título del plato en negro */
+  font-size: 18px;
+}
+
+.platillo-info p {
+  margin: 0 0 8px 0;
+  color: #555555; /* Descripción legible en gris oscuro */
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.precio-plato {
+  font-weight: bold;
+  color: #e64a19; /* Precio destacado en naranja */
+  font-size: 16px;
+}
+
+/* --- CONTENEDOR E IMAGEN (DERECHA) --- */
+.platillo-img-container {
+  width: 130px; /* Cuadrado perfecto alineado al alto de la tarjeta */
+  min-width: 130px;
+  height: 100%;
+}
+
+.platillo-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Recorta la imagen automáticamente para que no se deforme */
+}
+
+/* --- DISEÑO EXCLUSIVO PARA CELULARES --- */
+@media (max-width: 600px) {
+  /* Centramos el contenedor de platos */
+  .contenedor-menu {
+    width: 100%;
+    padding: 10px 15px;
+    box-sizing: border-box;
+  }
+
+  /* Cambiamos la tarjeta para que ponga la imagen arriba y el texto abajo */
+  .platillo {
+    flex-direction: column-reverse; /* Apila el contenido verticalmente */
+    height: auto; /* Quitamos el alto fijo para que crezca según el texto */
+    max-width: 100%;
+  }
+
+  /* La imagen ahora ocupa todo el ancho superior de la tarjeta */
+  .platillo-img-container {
+    width: 100%;
+    height: 160px; /* Le damos una buena altura visual */
+  }
+
+  /* Espaciado interno del texto corregido para celulares */
+  .platillo-info {
+    padding: 15px;
+    text-align: left; /* Mantiene la lectura prolija */
+  }
+}
+
+/* --- MAPA DE UBICACIÓN --- */
+.contenedor-mapa {
+  width: 90%;
+  max-width: 750px;
+  margin: 20px auto 40px auto;
+  border-radius: 15px;
+  overflow: hidden;
+  border: 3px solid #e64a19; /* Marco naranja parrillero */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.contenedor-mapa iframe {
+  width: 100%;
+  height: 300px; /* Altura cómoda para celular y PC */
+  border: none;
+  display: block;
+}
+
+.btn-reserva {
+  display: inline-block;
+  background-color: #25D366; /* Verde oficial de WhatsApp para generar confianza */
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 12px 24px;
+  border-radius: 30px;
+  text-decoration: none;
+  margin-top: 20px;
+  box-shadow: 0 6px 15px rgba(37, 211, 102, 0.3);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-reserva:hover {
+  background-color: #1ebe57;
+  transform: translateY(-2px);
+}
